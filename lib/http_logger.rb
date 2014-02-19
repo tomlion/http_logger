@@ -52,10 +52,11 @@ class HttpLogger
   ensure
     if require_logging?(http, request)
       log_request_url(http, request, start_time)
-      #log_request_body(request)
+      log_request_body(request)
       #log_request_headers(request)
       if defined?(response) && response
         log_response_code(response)
+        log('', '')
         #log_response_headers(response)
         #log_response_body(response.body)
       end
